@@ -1,0 +1,28 @@
+<div class="modal-header">
+  <h1 class="modal-title">Forecast for Noida</h1>
+  <button type="button" class="close" aria-label="Close" (click)="close()" style="position: absolute; top: 10px; right: 10px;">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div *ngFor="let forecast of forecastData" class="forecast-row" style="margin-bottom: 20px; padding: 10px; border-bottom: 1px solid #ccc;">
+    <div class="forecast-item">
+      <p>Date/Time: {{ forecast.dt_txt | date : "dd/MM/yyyy HH:mm" }}</p>
+    </div>
+    <div class="forecast-item">
+      <p>Weather: <br> {{ forecast.weather[0].description }}</p>
+    </div>
+    <div class="forecast-item">
+      <p>Temperature: {{ forecast.main.temp }}°C</p>
+    </div>
+    <div class="forecast-item">
+      <p>Humidity: <br> {{ forecast.main.humidity }}%</p>
+    </div>
+    <div class="forecast-item">
+      <p>Min Temperature: {{ forecast.main.temp_min }}°C</p>
+    </div>
+    <div class="forecast-item">
+      <p>Max Temperature: {{ forecast.main.temp_max }}°C</p>
+    </div>
+  </div>
+</div>

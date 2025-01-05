@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 8px;
+}
+
+.click {
+  cursor: pointer;
+  background-color: rgb(89, 157, 231);
+ }
+
+ .icon{
+  margin-right: 10px;
+ }
+
+.left-side, .right-side {
+  font-size: 1.2em;
+}

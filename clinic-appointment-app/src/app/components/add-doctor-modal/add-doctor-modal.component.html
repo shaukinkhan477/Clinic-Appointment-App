@@ -1,0 +1,68 @@
+<div class="modal-header">
+  <h4 class="modal-title">Create Doctor</h4>
+  <button
+    type="button"
+    class="btn-close btn-danger"
+    aria-label="Close"
+    (click)="closeModal()"
+  ></button>
+</div>
+<div class="modal-body">
+  <form (ngSubmit)="onSubmit()">
+    <div class="row mb-3">
+      <div class="col">
+        <label for="doctorName" class="form-label">Doctor Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="doctorName"
+          [(ngModel)]="doctor.name"
+          name="name"
+          required
+        />
+      </div>
+      <div class="col">
+        <label for="qualifications" class="form-label">Qualifications</label>
+        <input
+          type="text"
+          class="form-control"
+          id="qualifications"
+          [(ngModel)]="doctor.qualification"
+          name="qualification"
+          required
+        />
+      </div>
+    </div>
+
+    <!-- Image URL -->
+    <div class="mb-3">
+      <label for="image_url" class="form-label">Image URL</label>
+      <input
+        type="text"
+        class="form-control"
+        id="image_url"
+        [(ngModel)]="doctor.image_url"
+        name="image_url"
+        required
+      />
+    </div>
+
+    <!-- Description -->
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea
+        class="form-control"
+        id="description"
+        [(ngModel)]="doctor.description"
+        name="description"
+        rows="3"
+        required
+      ></textarea>
+    </div>
+
+    <!-- Create Doctor Button -->
+    <div class="float-end mb-3">
+      <button type="submit" class="btn btn-primary">Create Doctor</button>
+    </div>
+  </form>
+</div>

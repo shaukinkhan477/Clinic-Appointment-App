@@ -1,0 +1,29 @@
+<div class="doctor-list-container">
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <h5>Doctors</h5>
+    <button class="btn btn-primary" (click)="openAddDoctorModal()">
+      <i class="bi bi-plus"></i>
+    </button>
+  </div>
+    <!-- Display message if no doctors are available or Selected -->
+  <div *ngIf="doctors.length === 0" class="alert alert-info text-center">
+    No Doctors Available
+  </div>
+  <ul class="list-group">
+    <li
+      *ngFor="let doc of doctors"
+      class="list-group-item d-flex justify-content-between align-items-center"
+      [ngClass]="{ active: selectedDoctor === doc }"
+      (click)="selectDoctor(doc)"
+      style="cursor: pointer"
+    >
+      {{ doc.name }}
+      <button
+        class="btn btn-sm btn-outline-danger"
+        (click)="deleteDoctor($event, doc)"
+      >
+        <i class="bi bi-trash"></i>
+      </button>
+    </li>
+  </ul>
+</div>

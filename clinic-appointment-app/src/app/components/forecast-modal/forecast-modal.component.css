@@ -1,0 +1,14 @@
+.forecast-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.forecast-item {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.forecast-item:last-child {
+  margin-right: 0;
+}
